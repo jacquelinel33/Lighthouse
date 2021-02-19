@@ -2,17 +2,14 @@ const makeCase = (input, cases) => {
   let newString = "";
   let done = false;
   Array.isArray(cases) ? cases = cases : cases = [cases];
-  while (!done) {
+  while (done == false) {
     if (cases.includes("camel")) {
       function toCamel(match) {
         return match[1].toUpperCase();
       } newString = input.replace(/\s([a-z]{1})/g, toCamel);
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "camel");
-          if (cases.length === 0) {
-            done = true;
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "camel") {
+          cases.splice(i, 1);
         }
       }
     } if (cases.includes("pascal")) {
@@ -20,98 +17,93 @@ const makeCase = (input, cases) => {
       for (let x = 0; x < words.length; x++) {
         words[x] = words[x][0].toUpperCase() + words[x].substr(1);
       } newString = words.join(" ");
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "pascal");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "pascal");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "pascal") {
+          cases.splice(i, 1);
         }
       }
-    }if (cases.includes("snake")) {
+    }
+    if (cases.includes("snake")) {
       newsString = input.replace(/\s/g, "_");
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "snake");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "snake");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "snake") {
+          cases.splice(i, 1);
         }
       }
-    } if (cases.includes("kebab")) {
+    }
+    if (cases.includes("kebab")) {
       newString = input.replace(/\s/g, "-");
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "kebab");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "kebab");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "kebab") {
+          cases.splice(i, 1);
         }
       }
-    } if (cases.includes("title")) {
+    }
+    if (cases.includes("title")) {
       let words = input.split(" ");
       for (let x = 0; x < words.length; x++) {
         words[x] = words[x][0].toUpperCase() + words[x].substr(1); +" ";
       } newString = words.join(" ");
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "title");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "title");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "title") {
+          cases.splice(i, 1);
         }
       }
-    } if (cases.includes("vowel")) {
+    }
+    if (cases.includes("vowel")) {
       function vowelUpper(match) {
         return match.toUpperCase();
       }
       newString = input.replace(/[aeiou]/g, vowelUpper);
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "vowel");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "vowel");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "vowel") {
+          cases.splice(i, 1);
         }
       }
-    }if (cases.includes("consonant")) {
+    }
+    if (cases.includes("consonant")) {
       function consUpper(match) {
         return match.toUpperCase();
       } newString = input.replace(/[bcdfghjklmnpqrstvwxys]/g, consUpper);
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "consonant");
-          if (cases.length === 0) {
-            done = true;
+      cases.filter(word => word !== "consonant");
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "consonant") {
+          cases.splice(i, 1);
         }
       }
-    }if (cases.includes("upper")) {
+    }
+    if (cases.includes("upper")) {
       for (let x = 0; x < input.length; x++) {
         input[x].toUpperCase;
       } newString = input;
-      if (!Array.isArray(cases)) {
-        done = true;
-      } else {
-        cases.filter(word => word !== "upper");
-          if (cases.length === 0) {
-            done = true;
+      for (let i = 0; i < cases.length; i++) {
+        if (cases[i] == "upper") {
+          cases.splice(i, 1);
         }
       }
     } return newString;
-  }
+  } 
 }
 
 
 
-  console.log(makeCase("hello jello my names", "camel"));
-  console.log(makeCase("this is a string", "pascal"));
-  console.log(makeCase("this is a string", "snake"));
-  console.log(makeCase("this is a string", "kebab"));
-  console.log(makeCase("this is a string", "title"));
-  console.log(makeCase("this is a string", "vowel"));
-  console.log(makeCase("this is a string", "consonant"));
-  console.log(makeCase("this is a string", ["upper", "snake"]));
+
+
+
+
+console.log(makeCase("hello jello my names", "camel"));
+console.log(makeCase("this is a string", "pascal"));
+console.log(makeCase("this is a string", "snake"));
+console.log(makeCase("this is a string", "kebab"));
+console.log(makeCase("this is a string", "title"));
+console.log(makeCase("this is a string", "vowel"));
+console.log(makeCase("this is a string", "consonant"));
+console.log(makeCase("this is a string", ["upper", "snake"]));
 
 // thisIsAString
 // ThisIsAString
