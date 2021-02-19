@@ -10,6 +10,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "camel") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     } if (cases.includes("pascal")) {
@@ -21,6 +23,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "pascal") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -30,6 +34,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "snake") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -39,6 +45,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "kebab") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -51,6 +59,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "title") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -63,6 +73,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "vowel") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -74,6 +86,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "consonant") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     }
@@ -84,6 +98,8 @@ const makeCase = (input, cases) => {
       for (let i = 0; i < cases.length; i++) {
         if (cases[i] == "upper") {
           cases.splice(i, 1);
+        } if (cases.length == 0) {
+          done = true;
         }
       }
     } return newString;
